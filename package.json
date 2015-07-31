@@ -1,0 +1,30 @@
+{
+  "name": "@sinet/validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint",
+    "jscs": "jscs",
+    "nsp": "nsp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/School-Improvement-Network/validation.git"
+  },
+  "author": "School Improvement Network",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/School-Improvement-Network/validation/issues"
+  },
+  "homepage": "https://github.com/School-Improvement-Network/validation#readme",
+  "devDependencies": {
+    "eslint": "^0.24.0",
+    "jscs": "^1.13.0",
+    "nsp": "^1.0.3",
+    "sinet-coding-conventions": "^1.31.0"
+  },
+  "dependencies": {
+    "joi": "^6.6.1"
+  }
+}
