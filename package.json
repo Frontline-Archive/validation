@@ -6,7 +6,9 @@
   "scripts": {
     "eslint": "eslint",
     "jscs": "jscs",
-    "nsp": "nsp"
+    "nsp": "nsp",
+		"mocha" : "mocha",
+		"test" : "mocha"
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,15 @@
   },
   "homepage": "https://github.com/School-Improvement-Network/validation#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^0.24.0",
     "jscs": "^1.13.0",
+    "mocha": "^2.5.3",
     "nsp": "^1.0.3",
     "sinet-coding-conventions": "^1.31.0"
   },
   "dependencies": {
-    "joi": "^8.1.1"
+    "bluebird": "^3.4.0",
+    "joi": "^8.4.0"
   }
 }
