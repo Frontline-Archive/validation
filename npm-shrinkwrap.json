@@ -1,0 +1,36 @@
+{
+  "name": "@sinet/validation",
+  "version": "1.1.0",
+  "dependencies": {
+    "bluebird": {
+      "version": "3.4.0",
+      "from": "bluebird@latest",
+      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.0.tgz"
+    },
+    "hoek": {
+      "version": "4.0.1",
+      "from": "hoek@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/hoek/-/hoek-4.0.1.tgz"
+    },
+    "isemail": {
+      "version": "2.1.2",
+      "from": "isemail@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/isemail/-/isemail-2.1.2.tgz"
+    },
+    "joi": {
+      "version": "8.4.0",
+      "from": "joi@>=8.1.1 <9.0.0",
+      "resolved": "https://registry.npmjs.org/joi/-/joi-8.4.0.tgz"
+    },
+    "moment": {
+      "version": "2.13.0",
+      "from": "moment@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.13.0.tgz"
+    },
+    "topo": {
+      "version": "2.0.1",
+      "from": "topo@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/topo/-/topo-2.0.1.tgz"
+    }
+  }
+}

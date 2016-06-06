@@ -15,3 +15,4 @@ test:
 
     # Check packages with known and public vulnerable dependencies
     - npm run nsp -- audit-package
+    - npm run test
