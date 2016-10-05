@@ -27,8 +27,8 @@ module.exports = function ( keyArray ) {
 		'PersonnelId'      : userId.description( 'The personnel id of the user' ),
 		'Removed'          : Joi.date().description( 'The date the user was removed' ),
 		'Remover'          : userId.description( 'The user that removed this user' ),
-		'RoleTypeId'       : Joi.any().valid( 1, 3, 4 ).default( 1 ).description( 'The role type id for the user' ).notes( [ '1 : user', '2 : ??? (no longer used)', '3 : SINET Employee', '4 : Trial User (on its way out, not sure if it\'s used' ] ),
-		'UseWizards'       : Joi.any().valid( 0, 1 ).default( 1 ).description( 'Whether the user should use the wizards' ).notes( 'This might no longer be used' ),
+		'RoleTypeId'       : Joi.any().valid( 1, 3, 4 ).description( 'The role type id for the user' ).notes( [ '1 : user', '2 : ??? (no longer used)', '3 : SINET Employee', '4 : Trial User (on its way out, not sure if it\'s used' ] ),
+		'UseWizards'       : Joi.any().valid( 0, 1 ).description( 'Whether the user should use the wizards' ).notes( 'This might no longer be used' ),
 		'Verified'         : Joi.date().description( 'Whether the account has been verified' )
 	};
 
