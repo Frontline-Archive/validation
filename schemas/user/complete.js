@@ -18,7 +18,7 @@ module.exports = function ( keyArray ) {
 		'LastLogin'       : Joi.date().allow( null ).description( 'The date that the user last logged in' ),
 		'LastName'        : Joi.string().max( 64 ).description( 'The last name for the user' ),
 		'LicenseAccepted' : Joi.date().allow( null ).description( 'The date that the user accepted the license' ),
-		'LicenseInitials' : Joi.string().allow( null ).max( 10 ).description( 'The initials the user used for accepting the license' ),
+		'LicenseInitials' : Joi.string().allow( null, '' ).max( 10 ).description( 'The initials the user used for accepting the license' ),
 		'LoginCount'      : Joi.number().integer().positive().max( 5 ).allow( 0 ).description( 'The number of times the user has logged in' ),
 		'LoginName'       : Joi.string().max( 128 ).description( 'The login name for the user' ),
 		'Modified'        : Joi.date().description( 'The date the user was modified' ),
