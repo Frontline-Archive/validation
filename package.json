@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint",
-    "jscs": "jscs",
+    "lint": "npm run eslint -- ./",
     "nsp": "nsp"
   },
   "repository": {
@@ -19,10 +19,9 @@
   },
   "homepage": "https://github.com/School-Improvement-Network/validation#readme",
   "devDependencies": {
-    "eslint": "^0.24.0",
-    "jscs": "^1.13.0",
-    "nsp": "^1.0.3",
-    "sinet-coding-conventions": "^1.31.0"
+    "@sinet/coding-conventions": "^3.0.0",
+    "eslint": "^3.9.1",
+    "nsp": "^1.0.3"
   },
   "dependencies": {
     "joi": "^8.1.1"
