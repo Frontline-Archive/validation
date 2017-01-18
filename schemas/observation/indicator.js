@@ -50,6 +50,7 @@ module.exports = function ( level ) {
 		'notApplicable' : ( setNotApplicable() ),
 		'value'         : Joi.number().optional().description( 'The point value for indicator' ),
 		'score'         : ( setScore() ),
+		'isRequired'    : Joi.boolean().default( false ).description( 'Whether the indicator response is required for observation completion' ),
 
 		'prescribedResources' : Joi.array().optional()
 			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
