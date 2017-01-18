@@ -71,7 +71,7 @@ module.exports = function ( level ) {
 			.array()
 			.optional()
 			// Get common evidences schema
-			.items( Joi.object().optional().keys( require( './master-evidences' ) ) )
+			.items( Joi.object().optional().keys( require( './master-evidence' ) ) )
 			.description( 'All of the evidences assigned in the observation' ),
 
 		'prescribedResources' : Joi.array().optional()
