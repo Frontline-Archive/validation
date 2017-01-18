@@ -59,7 +59,7 @@ module.exports = function ( level ) {
 			.object()
 			.optional()
 			// Get common template schema
-			.keys( require( './template-schema' )( level ) )
+			.keys( require( './template' )( level ) )
 			.description( 'The template data of the observation' ),
 
 		// If the attributes are static this can be handled
@@ -71,7 +71,7 @@ module.exports = function ( level ) {
 			.array()
 			.optional()
 			// Get common evidences schema
-			.items( Joi.object().optional().keys( require( './master-evidences-schema' ) ) )
+			.items( Joi.object().optional().keys( require( './master-evidences' ) ) )
 			.description( 'All of the evidences assigned in the observation' ),
 
 		'prescribedResources' : Joi.array().optional()
@@ -83,7 +83,7 @@ module.exports = function ( level ) {
 			.array()
 			.optional()
 			// Get common prescibed resources schema
-			.items( Joi.object().optional().keys( require( './master-prescribed-resources-schema' ) ) )
+			.items( Joi.object().optional().keys( require( './master-prescribed-resource' ) ) )
 			.description( 'All of the prescribed resources assigned in the observation' ),
 
 		// Not clear yet whats inside this archive

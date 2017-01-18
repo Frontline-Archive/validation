@@ -40,7 +40,7 @@ module.exports = function ( level ) {
 			.array()
 			.optional()
 			// Get common rubric schema
-			.items( Joi.object().optional().keys( require( './rubric-schema' ) ) )
+			.items( Joi.object().optional().keys( require( './rubric' ) ) )
 			.description( 'The rubric data of the template -- Sanitizes HTML' ),
 
 		/*
@@ -55,7 +55,7 @@ module.exports = function ( level ) {
 		'templateAttachments' : Joi
 				.array()
 				.optional()
-				.items( Joi.object().optional().keys( require( './template-attachments-schema' ) ) )
+				.items( Joi.object().optional().keys( require( './template-attachment' ) ) )
 				.description( 'The template attachments' ),
 
 		'groups' : Joi.array().required().items( Joi.object().optional().keys( {
@@ -67,7 +67,7 @@ module.exports = function ( level ) {
 				.array()
 				// TBD if required or optional
 				.optional()
-				.items( Joi.object().optional().keys( require( './indicators-schema' )( level ) ) )
+				.items( Joi.object().optional().keys( require( './indicator' )( level ) ) )
 				.description( 'Indicators array -- Sanitizes HTML' ),
 
 			'prescribedResources' : Joi.array().optional()
@@ -80,7 +80,7 @@ module.exports = function ( level ) {
 			'templateAttachments' : Joi
 				.array()
 				.optional()
-				.items( Joi.object().optional().keys( require( './template-attachments-schema' ) ) )
+				.items( Joi.object().optional().keys( require( './template-attachment' ) ) )
 				.description( 'The template attachments' ),
 
 			// Formula for each group?
@@ -90,7 +90,7 @@ module.exports = function ( level ) {
 				.array()
 				.optional()
 				// Get common rubric schema
-				.items( Joi.object().optional().keys( require( './rubric-schema' ) ) )
+				.items( Joi.object().optional().keys( require( './rubric' ) ) )
 				.description( 'The rubric data of the group -- Sanitizes HTML' ),
 
 			'manualScore' : Joi.number().optional().description( 'The manually-assigned score of the group' )

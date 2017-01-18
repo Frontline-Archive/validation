@@ -60,7 +60,7 @@ module.exports = function ( level ) {
 		'templateAttachments' : Joi
 			.array()
 			.optional()
-			.items( Joi.object().optional().keys( require( './template-attachments-schema' ) ) )
+			.items( Joi.object().optional().keys( require( './template-attachment' ) ) )
 			.description( 'The template attachments' ),
 
 		'answerOptions' : Joi.array().optional().items( Joi.object().optional().keys( {
