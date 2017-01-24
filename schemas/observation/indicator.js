@@ -44,13 +44,17 @@ module.exports = function ( level ) {
 
 	var schema = {
 		'id'            : Joi.string().guid().required().description( 'The indicator id' ),
-		'type'          : Joi.number().integer().required().description( 'The indicator type' ),
+		'type'          : Joi.number().integer().valid( [ 1, 2, 3, 4, 5 ] ).required().description( 'The indicator type' ),
 		'questionText'  : Joi.string().required().description( 'The text of the question -- Sanitizes HTML' ),
 		'answerText'    : ( setAnswerText() ),
 		'notApplicable' : ( setNotApplicable() ),
 		'value'         : Joi.number().optional().description( 'The point value for indicator' ),
 		'score'         : ( setScore() ),
-		'isRequired'    : Joi.boolean().default( false ).description( 'Whether the indicator response is required for observation completion' ),
+		'isRequired'    : Joi.when( 'type', {
+			'is'        : [ 1, 2, 3, 4 ],
+			'then'      : Joi.boolean().default( false ).description( 'Whether the indicator response is required for observation completion' ),
+			'otherwise' : Joi.forbidden()
+		} ),
 
 		'prescribedResources' : Joi.array().optional()
 			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
