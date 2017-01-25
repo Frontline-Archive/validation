@@ -39,6 +39,7 @@ module.exports = function ( level ) {
 		'submitDate'    : Joi.date().optional().description( 'When the observation was submitted' ),
 
 		'partialSubmission' : Joi.boolean().required().description( 'If observation is partially completed' ),
+		'inReview'          : Joi.boolean().optional().description( 'If observation is in review' ),
 
 		/*
 		 * We were told there might be times where a user would want multiple types (e.g. a formal self assessment)
