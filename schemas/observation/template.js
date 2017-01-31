@@ -96,6 +96,9 @@ module.exports = function ( level ) {
 			'manualScore' : Joi.number().optional().description( 'The manually-assigned score of the group' )
 		} ) ).description( 'The group data' ),
 
+		// Hides scoring on template and observation in front-end when set to true
+		'hideScoring' : Joi.boolean().optional().description( 'Hides scoring on template and observation in front-end when set to true' ),
+
 		// Created Date
 		'createdAt' : Joi.date().optional().strip().description( 'The created date of the template. This will not be saved to the template object.' ),
 
