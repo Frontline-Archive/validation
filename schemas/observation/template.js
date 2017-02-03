@@ -51,6 +51,13 @@ module.exports = function ( level ) {
 		 */
 		'tags' : Joi.array().optional().description( 'The tag information of the template' ),
 
+		// for template reference files
+		'templateReferences' : Joi
+			.array()
+			.optional()
+			.items( Joi.object().optional().keys( require( './template-attachment' ) ) )
+			.description( 'Template reference/instructional files' ),
+
 		// for template level pd
 		'templateAttachments' : Joi
 				.array()
