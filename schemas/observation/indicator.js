@@ -28,6 +28,15 @@ module.exports = function ( level ) {
 		return Joi.boolean().optional().description( 'If notApplicable has been checked' );
 	}
 
+	function setPrescribedResources () {
+		if ( level === 'strict' ) {
+			return Joi.forbidden();
+		}
+		return Joi.array().optional()
+			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
+			.description( 'The prescribed resources assigned at the observation level' );
+	}
+
 	function setScore () {
 		if ( level === 'strict' ) {
 			return Joi.forbidden();
@@ -56,9 +65,7 @@ module.exports = function ( level ) {
 			'otherwise' : Joi.forbidden()
 		} ),
 
-		'prescribedResources' : Joi.array().optional()
-			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
-			.description( 'The prescribed resources assigned at the observation level' ),
+		'prescribedResources' : ( setPrescribedResources() ),
 
 		'evidences' : ( setEvidences() ),
 

@@ -1,8 +1,19 @@
 'use strict';
 
+/* eslint no-extra-parens: [2, "functions"] */
+
 var Joi = require( 'joi' );
 
 module.exports = function ( level ) {
+	function setPrescribedResources () {
+		if ( level === 'strict' ) {
+			return Joi.forbidden();
+		}
+		return Joi.array().optional()
+			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
+			.description( 'The prescribed resources assigned at the observation level' );
+	}
+
 	var schema = {
 		// Observation id
 		'id' : Joi.string().guid().required().description( 'The observation uuid' ),
@@ -75,10 +86,7 @@ module.exports = function ( level ) {
 			.items( Joi.object().optional().keys( require( './master-evidence' ) ) )
 			.description( 'All of the evidences assigned in the observation' ),
 
-		'prescribedResources' : Joi.array().optional()
-			// Get common prescibed resources schema
-			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
-			.description( 'The prescribed resources assigned at the observation level' ),
+		'prescribedResources' : ( setPrescribedResources() ),
 
 		'masterPrescribedResources' : Joi
 			.array()

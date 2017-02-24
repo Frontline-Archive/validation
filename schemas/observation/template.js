@@ -13,6 +13,15 @@ module.exports = function ( level ) {
 			.description( 'The evidences assigned' );
 	}
 
+	function setPrescribedResources () {
+		if ( level === 'strict' ) {
+			return Joi.forbidden();
+		}
+		return Joi.array().optional()
+			.items( Joi.string().guid().required().description( 'The observation uuid' ) )
+			.description( 'The prescribed resources assigned at the observation level' );
+	}
+
 	var schema = {
 		// Template id
 		'id' : Joi.string().guid().required().description( 'The template uuid' ),
@@ -77,9 +86,7 @@ module.exports = function ( level ) {
 				.items( Joi.object().optional().keys( require( './indicator' )( level ) ) )
 				.description( 'Indicators array -- Sanitizes HTML' ),
 
-			'prescribedResources' : Joi.array().optional()
-				.items( Joi.string().guid().required().description( 'The observation uuid' ) )
-				.description( 'The prescribed resources assigned at the observation level' ),
+			'prescribedResources' : ( setPrescribedResources() ),
 
 			/* eslint no-extra-parens: [2, "functions"] */
 			'evidences' : ( setEvidences() ),
