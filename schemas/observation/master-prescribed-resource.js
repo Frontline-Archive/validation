@@ -4,8 +4,8 @@ var Joi = require( 'joi' );
 
 module.exports = {
 	'id'                     : Joi.string().guid().required().description( 'The resource id' ),
-	'resourceId'             : Joi.number().integer().required().description( 'The id for the resource itself (e.g. contentId, groupId)' ),
-	'type'                   : Joi.any().required().valid( [ 1 ] ).description( 'The resource type (e.g. 1 for content)' ),
+	'resourceId'             : Joi.any().required().description( 'The id for the resource itself (e.g. contentId, groupId, fileId )' ),
+	'type'                   : Joi.any().required().valid( [ 1, 2, 3 ] ).description( 'The resource type (e.g. 1 for content, 2 for files, 3 for mc)' ),
 	'name'                   : Joi.forbidden(),
 	'description'            : Joi.forbidden(),
 	'segmentLengthInSeconds' : Joi.forbidden(),
