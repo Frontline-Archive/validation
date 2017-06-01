@@ -1,6 +1,7 @@
 'use strict';
 
 var validations = {
+	'action'         : require( './schemas/action' ),
 	'authentication' : require( './schemas/authentication' ),
 	'libraries'      : require( './schemas/libraries' ),
 	'lti'            : require( './schemas/lti' ),
