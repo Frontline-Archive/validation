@@ -9,6 +9,6 @@ module.exports = {
 	'name'                   : Joi.forbidden(),
 	'description'            : Joi.forbidden(),
 	'segmentLengthInSeconds' : Joi.forbidden(),
-	'dueDate'                : Joi.date().optional().description( 'The due date of observed to complete assigned resource' ),
+	'dueDate'                : Joi.date().raw().optional().description( 'The due date of observed to complete assigned resource' ),
 	'completedDate'          : Joi.date().optional().description( 'The completed date' )
 };
