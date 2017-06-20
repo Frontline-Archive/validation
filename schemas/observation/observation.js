@@ -102,7 +102,14 @@ module.exports = function ( level ) {
 		 * CONCERNS
 		 * Where did this come from? Its not in the wiki
 		*/
-		'manualScore' : Joi.number().optional().description( 'The manually-assigned score of the observation' )
+		'manualScore' : Joi.number().optional().description( 'The manually-assigned score of the observation' ),
+
+		// Digital signature attribute
+		'digitalSignature' : Joi
+			.object()
+			.optional()
+			.keys( require( './digital-signature' ) )
+			.description( 'Holds the digital signature data for the current observation' )
 	};
 
 	return schema;

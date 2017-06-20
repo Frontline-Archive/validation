@@ -7,6 +7,7 @@ var observation              = require( './observation' );
 var rubric                   = require( './rubric' );
 var template                 = require( './template' );
 var templateAttachment       = require( './template-attachment' );
+var digitalSignature         = require( './digital-signature' );
 
 var validations = {
 	'indicator'                  : indicator,
@@ -15,7 +16,8 @@ var validations = {
 	'observation'                : observation,
 	'rubric'                     : rubric,
 	'template'                   : template,
-	'template-attachment'        : templateAttachment
+	'template-attachment'        : templateAttachment,
+	'digitalSignature'           : digitalSignature
 };
 
 module.exports = validations;
