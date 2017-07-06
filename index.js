@@ -1,13 +1,18 @@
 'use strict';
 
-var validations = {
-	'action'         : require( './schemas/action' ),
-	'authentication' : require( './schemas/authentication' ),
-	'libraries'      : require( './schemas/libraries' ),
-	'lti'            : require( './schemas/lti' ),
-	'mc'             : require( './schemas/mc' ),
-	'observation'    : require( './schemas/observation' ),
-	'user'           : require( './schemas/user' )
-};
+var fs             = require( 'fs' );
+var path           = require( 'path' );
+var schemaBasePath = path.join( __dirname, 'schemas' );
+var schemas        = fs.readdirSync( schemaBasePath );
 
-module.exports = validations;
+function validations () {
+	var returnObj = {};
+
+	schemas.forEach( function ( value ) {
+		returnObj[ value ] = require( path.join( schemaBasePath, value ) );
+	} );
+
+	return returnObj;
+}
+
+module.exports = validations();
