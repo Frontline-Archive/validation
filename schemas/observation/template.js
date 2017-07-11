@@ -120,7 +120,10 @@ module.exports = function ( level ) {
 		'updatedAt' : Joi.date().optional().strip().description( 'The updated date of the template. This will not be saved to the template object.' ),
 
 		// Boolean value to allow digital signatures
-		'allowSignature' : Joi.boolean().optional().description( 'indicator that the current template will allow digital signatures' )
+		'allowSignature' : Joi.boolean().optional().description( 'indicator that the current template will allow digital signatures' ),
+
+		// Hash Version Id
+		'versionId' : Joi.string().guid().optional().description( 'The template hash version id' )
 	};
 
 	return schema;
