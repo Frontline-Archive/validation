@@ -3,7 +3,8 @@
 var complete = require( './complete' );
 
 var validations = {
-	'complete' : complete,
+	'complete'    : complete,
+	'credentials' : require( './credentials' ),
 
 	'id'       : complete( 'PersonnelId' ),
 	'password' : complete( 'Password' ),
