@@ -14,5 +14,5 @@ module.exports = {
 	'expireDate'  : Joi.date().required().description( 'The mc expire date' ),
 	'recordState' : Joi.string().valid( [ 'draft', 'publish' ] ).optional().description( 'The edit state of the mc: e.g. draft, publish' ),
 	'parentMcId'  : Joi.string().guid().optional().description( 'The parent\'s microcredential id, the old version microcredential id' ),
-	'publishDate' : Joi.date().required().description( 'The date when the MC is published' )
+	'publishDate' : Joi.date().optional().description( 'The date when the MC is published' )
 };
