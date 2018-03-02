@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/School-Improvement-Network/validation#readme",
   "devDependencies": {
-    "@sinet/coding-conventions" : "^3.0.0",
-    "eslint"                    : "^3.9.1",
-    "nsp"                       : "^1.0.3"
+    "@sinet/coding-conventions": "^3.0.0",
+    "eslint": "^3.9.1",
+    "nsp": "^1.0.3"
   },
   "dependencies": {
-    "joi"  : "^9.0.4",
-    "path" : "^0.12.7"
+    "joi": "13.1.2",
+    "path": "^0.12.7"
   }
 }
