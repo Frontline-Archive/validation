@@ -5,7 +5,7 @@ var Joi = require( 'joi' );
 module.exports = {
 	'id'          : Joi.string().guid().optional().description( 'The microcredentials id' ),
 	'title'       : Joi.string().required().description( 'The microcredentials title' ),
-	'description' : Joi.string().required().description( 'The microcredentials description' ),
+	'description' : Joi.string().optional().description( 'The microcredentials description' ),
 	'level'       : Joi.any().valid( [ 'basic', 'premium' ] ).required().description( 'The level for the mc' ),
 	'creator'     : Joi.string().required().description( 'The id of the microcredentials creator' ),
 	'issuer'      : Joi.string().required().description( 'The id of the microcredentials issuer' ),
