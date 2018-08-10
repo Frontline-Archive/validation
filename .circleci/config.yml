@@ -1,0 +1,57 @@
+version: 2
+
+references:
+  container_config: &container_config
+    working_directory: ~/sinet/validation
+    docker:
+      - image: circleci/node:8.11.3
+    environment:
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+
+  save: &save
+    persist_to_workspace:
+      root: ~/sinet/validation
+      paths:
+        - .
+
+  load: &load
+    attach_workspace:
+      at: ~/sinet/validation
+
+jobs:
+  checkout_code:
+    <<: *container_config
+    steps:
+      - checkout
+      - *save
+
+  install_deps:
+    <<: *container_config
+    steps:
+      - *load
+      - run:
+          name: Installing Dependencies
+          command: npm install
+      - *save
+
+  lint:
+    <<: *container_config
+    steps:
+      - *load
+      - run:
+          name: Detect errors and potential problems
+          command: npm run eslint -- ./
+
+workflows:
+  version: 2
+
+  pull_request:
+    jobs:
+      - checkout_code
+      - install_deps:
+          requires:
+            - checkout_code
+      - lint:
+          requires:
+            - install_deps
